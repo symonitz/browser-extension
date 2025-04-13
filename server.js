@@ -73,15 +73,17 @@ function toTrigger(url){
 
 app.get("/urls", (req, res) => {
   const clientVersion = req.headers["x-client-version"]; 
-  if (clientVersion == version)
+  if (clientVersion === version)
   {
-    return res.status(304).send("No changes in version.");
+    return res.status(204).send("No changes in version.");
     
   }
-
-  res.json({
-    urls: urlList,version: "1.0.0",
-  });
+  else{
+    res.json({
+      urls: urlList,version: version,
+    });
+  }
+ 
 });
 
 

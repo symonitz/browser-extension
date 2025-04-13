@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "My First Extension",
+    "version": "1.0",
+    "description": "A simple Chrome extension.",
+  
+    "background": {
+      "service_worker": "background/index.js",
+      "type": "module"
+    },
+    "permissions": ["alarms", "tabs", "storage", "webRequest", "notifications"],
+    "host_permissions": [
+     "<all_urls>"
+
+    ]
+  }
+  
